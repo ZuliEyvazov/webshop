@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zulfugart Webshop</title>
+
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/cart.css">
+    <script src="/assets/js/components/cart.js"></script>
+    <script src="/assets/js/components/navbar.js"></script>
+
+</head>
+
+
+
+<!-----------------------------------------------------------------NAVBAR & FILTERS BUTTONS---------------------------------------------------------------------------------------->
+
+<body>
+    <div id="app">
+
+        <div class="header">
+
+            <shopping-cart ref="cartComponent"></shopping-cart>
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+
+
+
+                        <div id="myBtnContainer">
+                            <button class="unfiltered" id="filter-all"> All Products</button>
+
+                            <button class="filter-button" category="Male">Male </button>
+                            <button class="filter-button" category="Female">Female</button>
+                            <button class="filter-button" category="Kids">Kids</button>
+                            <button class="filter-button" category="Accessoires">Accessoires</button>
+
+                        </div>
+
+                    </div>
+
+                    <button @click="showCart" class="shoppingButton"><svg xmlns="http://www.w3.org/2000/svg" width="40"
+                            height="40" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                            <path
+                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                        </svg>
+                        <!--SHOPPINGCART-->
+                    </button>
+
+                    <div id="cart-trigger">
+                        <button id="placeorder">
+                            <!--<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                            </svg>-->
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </nav>
+            <img src="assets/images/logo.png" alt="logo">
+        </div>
+
+        <!--<div id="cd-cart-trigger"><a class="cd-img-replace"ner</div>
+            
+        <!----------------------------------------ROW OF PRODUCTS & PRICES ------------------------------------------------------------------------>
+
+
+        <section class="content">
+            <div class="container-fluid p-0">
+                <div class="row">
+
+                    <div class="col-md-6 product card gallery_product" category="Male">
+                        <div class="card-header">Skeleton Shirt</div>
+
+                        <div class="card-body">
+                            <button v-on:click="addToCart">Add to cart</button>
+
+                            <h5 class="card-title">19.99</h5>
+                            <p class="card-text" v-if="inventory > 10">In Stock</p>
+                            <p class="card-text" v-else-if="inventory<=10 && inventory > 0"> Almost sold out </p>
+                            <p class="card-text" v-else>Out of Stock</p>
+                        </div>
+
+                        <img class="img-fluid" src="assets/images/Tshirts.png" alt="Skeleton">
+                    </div>
+
+                    <div class="col-md-6 product card gallery_product" category="Female">
+                        <div class="card-header">Martial Arts</div>
+                        <div class="card-body">
+                            <button v-on:click="addToCart">Add to cart</button>
+
+                            <h5 class="card-title">24.99</h5>
+                            <p class="card-text" v-if="inventory > 10">In Stock</p>
+                            <p class="card-text" v-else-if="inventory<=10 && inventory > 0"> Almost sold out </p>
+                            <p class="card-text" v-else>Out of Stock</p>
+
+                        </div>
+                        <img class="img-fluid" src="assets/images/martialarts.jpg" alt="martialarts">
+                    </div>
+
+                    <div class="col-md-6 product card gallery_product" category="Male">
+                        <div class="card-header">hoodie</div>
+                        <div class="card-body">
+                            <h5 class="card-title">35.99</h5>
+                            <p class="card-text" v-if="inventory > 10">In Stock</p>
+                            <p class="card-text" v-else-if="inventory<=10 && inventory > 0"> Almost sold out </p>
+                            <p class="card-text" v-else>Out of Stock</p>
+                        </div>
+
+                        <img class="img-fluid" src="assets/images/hoodie.png" alt="hoodie">
+                    </div>
+
+                    <div class="col-md-6 product product card gallery_product" category="Accessoires">
+                        <div class="card-header">mondkapje</div>
+                        <div class="card-body">
+                            <h5 class="card-title"> 10,00</h5>
+                            <p class="card-text" v-if="inventory > 10">In Stock</p>
+                            <p class="card-text" v-else-if="inventory<=10 && inventory > 0"> Almost sold out </p>
+                            <p class="card-text" v-else>Out of Stock</p>
+
+                        </div>
+                        <img class="img-fluid" src="assets/images/mondkapje.png" alt="mondkapje">
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <!-----------------------------------------------CART ------------------------------------------------------------------>
+    <div class="cart">
+        <!--<!-- Title -->
+        <div class="Cart">
+            <p>Cart</p>
+        </div>
+
+        <!-- Product #1 -->
+
+
+        <div class="item">
+            <div class="buttons">
+                <span class="delete-btn"></span>
+                <span class="like-btn"></span>
+            </div>
+
+            <div class="imageSmaller">
+                <img class="img-fluid" src="assets/images/tshirtssmallerCopy.png" alt="Skeleton Shirt SMaller">
+            </div>
+
+            <div class="description">
+                <span>Skeleton Shirt</span>
+
+            </div>
+
+            <div class="quantity">
+                <button class="plus-btn" type="button" name="button">
+                    <img src="https://designmodo.com/demo/shopping-cart/plus.svg" alt="" />
+                </button>
+                <input type="text" name="name" value="1">
+                <button class="minus-btn" type="button" name="button">
+                    <img src="https://designmodo.com/demo/shopping-cart/minus.svg" alt="" />
+                </button>
+            </div>
+
+
+
+            <div class="total-price">19.99</div>
+        </div>
+
+        <!-- Product #2 -->
+        <div class="item">
+            <div class="buttons">
+                <span class="delete-btn"></span>
+                <span class="like-btn"></span>
+            </div>
+
+            <div class="imageevenSmaller">
+                <img src="assets/images/martialartsSmaller.png" alt="Martial Arts Ladies" />
+            </div>
+
+            <div class="description">
+                <span>martialarts</span>
+
+            </div>
+
+            <div class="quantity">
+                <button class="plus-btn" type="button" name="button">
+                    <img src="https://designmodo.com/demo/shopping-cart/plus.svg" alt="" />
+                </button>
+                <input type="text" name="name" value="1">
+                <button class="minus-btn" type="button" name="button">
+                    <img src="https://designmodo.com/demo/shopping-cart/minus.svg" alt="" />
+                </button>
+            </div>
+
+            <div class="total-price"></div>
+        </div>
+
+        <!-- Product #3 -->
+        <div class="item">
+            <div class="buttons">
+                <span class="delete-btn"></span>
+                <span class="like-btn"></span>
+            </div>
+
+            <div class="image">
+                <img src="https://designmodo.com/demo/shopping-cart/item-3.png" alt="" />
+            </div>
+
+            <div class="description">
+                <span>hoodie</span>
+
+            </div>
+
+            <div class="quantity">
+                <button class="plus-btn" type="button" name="button">
+                    <img src="https://designmodo.com/demo/shopping-cart/plus.svg" alt="" />
+                </button>
+                <input type="text" name="name" value="1">
+                <button class="minus-btn" type="button" name="button">
+                    <img src="https://designmodo.com/demo/shopping-cart/minus.svg" alt="" />
+                </button>
+            </div>
+
+            <div class="total-price">35,99</div>
+        </div>
+
+
+        <!--Product #4-->
+
+        <div class="item">
+            <div class="buttons">
+                <span class="delete-btn"></span>
+                <span class="like-btn"></span>
+            </div>
+
+            <div class="image">
+                <img src="https://designmodo.com/demo/shopping-cart/item-3.png" alt="" />
+            </div>
+
+            <div class="description">
+                <span>mondkapje</span>
+
+            </div>
+
+            <div class="quantity">
+                <button class="plus-btn" type="button" name="button">
+                    <img src="https://designmodo.com/demo/shopping-cart/plus.svg" alt="" />
+                </button>
+                <input type="text" name="name" value="1">
+                <button class="minus-btn" type="button" name="button">
+                    <img src="https://designmodo.com/demo/shopping-cart/minus.svg" alt="" />
+                </button>
+            </div>
+
+            <div class="total-price">10,00</div>
+        </div>
+    </div>
+
+    <!-------------------------------------------------------------------------------------FOOTER--------------------------------------------------------------------------------------------------------->
+    <div class="footer">
+
+        <div class="row">
+            <div class="col-4">
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col-4"></div>
+                    <div class="col-4"></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <ul id="foot-2">
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+            <div class="col-4">
+                <ul id="foot-2">
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+
+<script src="assets/js/app.js"></script>
+<script src="assets/js/proof.js"></script>
+
+
+
+
+</html>

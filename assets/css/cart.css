@@ -1,0 +1,185 @@
+.cart {
+    /*background-color: rgb(175, 175, 175, 1);*/
+    position: fixed;
+    top: 50px;
+    height: 90%;
+    width: 300px;
+    z-index: 1000;
+    opacity: 0.99;
+    right: 0;
+    float: right;
+    display: none;
+    font-size: 16px;
+    padding: 1px;
+    color: rgb(0, 0, 0, 0.5);
+    overflow: scroll;
+    text-align: center;
+}
+
+
+/* item styling */
+
+
+
+
+
+title {
+    top: 85px;
+    height: 3.75em;
+    border-bottom: 5px solid #E1E8EE;
+    padding: 1.25em 1.75em;
+    color: #5E6977;
+    font-size: 1.125em;
+    font-weight: 400;
+    text-align: center;
+}
+
+
+.item {
+    padding: 0.15em 0.15em;
+    height: 10.5em;
+    display: inline-block;
+    text-align: center;
+}
+
+
+
+
+.imageSmaller {
+    width: 200px;
+}
+
+
+
+/*
+.item:nth-child(3) {
+    border-top: 1px solid #E1E8EE;
+    border-bottom: 1px solid #E1E8EE;
+}
+
+.buttons {
+    position: relative;
+    padding-top: 1.75em;
+    margin-right: 3.5em;
+}
+
+.delete-btn,
+.like-btn {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.delete-btn {
+    width: 18px;
+    height: 17px;
+    background: url("https://designmodo.com/demo/shopping-cart/delete-icn.svg") no-repeat center;
+}
+
+
+
+.image {
+    margin-right: 50px;
+}
+
+.description {
+    padding-top: 10px;
+    margin-right: 60px;
+    width: 115px;
+}
+
+.description span {
+    display: block;
+    font-size: 1em;
+    color: #43484D;
+    font-weight: 400;
+}
+
+.description span:first-child {
+    margin-bottom: 5px;
+}
+
+.description span:last-child {
+    font-weight: 300;
+    margin-top: 8px;
+    color: #86939E;
+}
+
+.quantity {
+    padding-top: 20px;
+    margin-right: 60px;
+}
+
+*/
+.quantity input {
+    -webkit-appearance: none;
+    border: none;
+    text-align: center;
+    width: 20px;
+    font-size: 1em;
+    color: #43484D;
+    font-weight: 300;
+}
+
+button[class*=btn] {
+    width: 30px;
+    height: 30px;
+    background-color: #E1E8EE;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.minus-btn img {
+    margin-bottom: 3px;
+}
+
+.plus-btn img {
+    margin-top: 6px;
+}
+
+button:focus,
+input:focus {
+    outline: 0;
+}
+
+.total-price {
+    width: 83px;
+    padding-top: 27px;
+    text-align: center;
+    font-size: 1em;
+    color: #43484D;
+    font-weight: 300;
+    text-align: center;
+}
+
+/* media queries */
+/*
+@media (max-width: 600px) {
+    .shopping-cart {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .item {
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .image img {
+        width: 50%;
+    }
+
+    .image,
+    .quantity,
+    .description {
+        width: 50%;
+        text-align: center;
+        margin: px 0;
+    }
+
+    .buttons {
+        margin-right: 0px;
+    }
+}

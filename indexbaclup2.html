@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zulfugart Webshop</title>
+
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/cart.css">
+    <script src="/assets/js/components/cart.js"></script>
+    <script src="/assets/js/components/navbar.js"></script>
+
+</head>
+
+
+
+<!-----------------------------------------------------------------NAVBAR & FILTERS BUTTONS---------------------------------------------------------------------------------------->
+
+<body>
+    <div id="app">
+
+        <div class="header">
+
+            <shopping-cart ref="cartComponent"></shopping-cart>
+
+            <nav-comp></nav-comp>
+            <img src="assets/images/logo.png" alt="logo">
+        </div>
+
+        <!--<div id="cd-cart-trigger"><a class="cd-img-replace"ner</div>
+            
+        <!----------------------------------------ROW OF PRODUCTS & PRICES ------------------------------------------------------------------------>
+
+
+        <section class="content">
+            <div class="container-fluid p-0">
+                <div class="row">
+
+                    <div class="col-md-6 product card gallery_product" category="Male">
+                        <div class="card-header">Skeleton Shirt</div>
+
+                        <div class="card-body">
+                            <button class="addtoCart" v-on:click="addToCart">Add to cart</button>
+
+                            <h5 class="card-title">19.99</h5>
+                            <p class="card-text" v-if="inventory > 10">In Stock</p>
+                            <p class="card-text" v-else-if="inventory<=10 && inventory > 0"> Almost sold out </p>
+                            <p class="card-text" v-else>Out of Stock</p>
+                        </div>
+
+                        <img class="img-fluid" src="assets/images/Tshirts.png" alt="Skeleton">
+                    </div>
+
+                    <div class="col-md-6 product card gallery_product" category="Female">
+                        <div class="card-header">Martial Arts</div>
+                        <div class="card-body">
+                            <button v-on:click="addToCart">Add to cart</button>
+
+                            <h5 class="card-title">24.99</h5>
+                            <p class="card-text" v-if="inventory > 10">In Stock</p>
+                            <p class="card-text" v-else-if="inventory<=10 && inventory > 0"> Almost sold out </p>
+                            <p class="card-text" v-else>Out of Stock</p>
+
+                        </div>
+                        <img class="img-fluid" src="assets/images/martialarts.jpg" alt="martialarts">
+                    </div>
+
+                    <div class="col-md-6 product card gallery_product" category="Male">
+                        <div class="card-header">hoodie</div>
+                        <div class="card-body">
+                            <button v-on:click="addToCart">Add to cart</button>
+                            <h5 class="card-title">35.99</h5>
+                            <p class="card-text" v-if="inventory > 10">In Stock</p>
+                            <p class="card-text" v-else-if="inventory<=10 && inventory > 0"> Almost sold out </p>
+                            <p class="card-text" v-else>Out of Stock</p>
+                        </div>
+
+                        <img class="img-fluid" src="assets/images/hoodie.png" alt="hoodie">
+                    </div>
+
+                    <div class="col-md-6 product product card gallery_product" category="Accessoires">
+                        <div class="card-header">mondkapje</div>
+                        <div class="card-body">
+                            <button v-on:click="addToCart">Add to cart</button>
+                            <h5 class="card-title"> 10,00</h5>
+                            <p class="card-text" v-if="inventory > 10">In Stock</p>
+                            <p class="card-text" v-else-if="inventory<=10 && inventory > 0"> Almost sold out </p>
+                            <p class="card-text" v-else>Out of Stock</p>
+
+                        </div>
+                        <img class="img-fluid" src="assets/images/modnkapjeSmaller.jpg" alt="mondkapje">
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <!-----------------------------------------------CART ------------------------------------------------------------------>
+    <div class="cart">
+        <!--<!-- Title -->
+        <div class="Cart">
+            <p>Cart</p>
+        </div>
+
+        <!-- Product #1 -->
+
+
+        <div class="item">
+            <div class="buttons">
+                <span class="delete-btn"></span>
+                <span class="like-btn"></span>
+            </div>
+
+            <div class="imageSmaller">
+                <img class="img-fluid" src="assets/images/tshirtssmallerCopy.png" alt="Skeleton Shirt SMaller">
+            </div>
+
+            <div class="description">
+                <span>Skeleton Shirt</span>
+
+            </div>
+
+            <div class="quantity">
+                <button class="plus-btn" type="button" name="button">
+                    <img src="https://designmodo.com/demo/shopping-cart/plus.svg" alt="" />
+                </button>
+                <input type="text" name="name" value="1">
+                <button class="minus-btn" type="button" name="button">
+                    <img src="https://designmodo.com/demo/shopping-cart/minus.svg" alt="" />
+                </button>
+            </div>
+
+
+
+            <div class="total-price">19.99</div>
+        </div>
+
+        <!-- Product #2 -->
+        <div class="item">
+            <div class="buttons">
+                <span class="delete-btn"></span>
+                <span class="like-btn"></span>
+            </div>
+
+            <div class="imageSmaller">
+                <img class="img-fluid" src="assets/images/martialartsSmaller.png" alt="" />
+            </div>
+
+            <div class="description">
+                <span>martialarts</span>
+
+            </div>
+
+            <div class="quantity">
+                <button class="plus-btn" type="button" name="button">
+                    <img src="https://designmodo.com/demo/shopping-cart/plus.svg" alt="" />
+                </button>
+                <input type="text" name="name" value="1">
+                <button class="minus-btn" type="button" name="button">
+                    <img src="https://designmodo.com/demo/shopping-cart/minus.svg" alt="" />
+                </button>
+            </div>
+
+            <div class="total-price"></div>
+        </div>
+
+        <!-- Product #3 -->
+        <div class="item">
+            <div class="buttons">
+                <span class="delete-btn"></span>
+                <span class="like-btn"></span>
+            </div>
+
+            <div class="imageSmaller">
+                <img class="img-fluid" src="assets/images/kidssmaller.png" alt="" />
+            </div>
+
+            <div class="description">
+                <span>hoodie</span>
+
+            </div>
+
+            <div class="quantity">
+                <button class="plus-btn" type="button" name="button">
+                    <img src="https://designmodo.com/demo/shopping-cart/plus.svg" alt="" />
+                </button>
+                <input type="text" name="name" value="1">
+                <button class="minus-btn" type="button" name="button">
+                    <img src="https://designmodo.com/demo/shopping-cart/minus.svg" alt="" />
+                </button>
+            </div>
+
+            <div class="total-price">35,99</div>
+        </div>
+
+
+        <!--Product #4-->
+
+        <div class="item">
+            <div class="buttons">
+                <span class="delete-btn"></span>
+                <span class="like-btn"></span>
+            </div>
+
+            <div class="imageSmaller">
+                <img class="img-fluid" src="assets/images/modnkapjeSmaller.jpg" alt="Modkapje" />
+            </div>
+
+            <div class="description">
+                <span>mondkapje</span>
+
+            </div>
+
+            <div class="quantity">
+                <button class="plus-btn" type="button" name="button">
+                    <img src="https://designmodo.com/demo/shopping-cart/plus.svg" alt="" />
+                </button>
+                <input type="text" name="name" value="1">
+                <button class="minus-btn" type="button" name="button">
+                    <img src="https://designmodo.com/demo/shopping-cart/minus.svg" alt="" />
+                </button>
+            </div>
+
+            <div class="total-price">10,00</div>
+        </div>
+    </div>
+
+    <!-------------------------------------------------------------------------------------FOOTER--------------------------------------------------------------------------------------------------------->
+    <div class="footer">
+
+        <div class="row">
+            <div class="col-4">
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col-4"></div>
+                    <div class="col-4"></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <ul id="foot-2">
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+            <div class="col-4">
+                <ul id="foot-2">
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+
+<script src="assets/js/app.js"></script>
+<script src="assets/js/proof.js"></script>
+
+
+
+
+</html>
