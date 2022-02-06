@@ -94,16 +94,16 @@ Vue.component('footer-comp', {
                         Products
                     </h6>
                     <p>
-                        <a href="#!" class="text-reset">Angular</a>
+                        <a href="#!" class="text-reset">Illustrations</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">React</a>
+                        <a href="#!" class="text-reset">Tshirts</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">Vue</a>
+                        <a href="#!" class="text-reset">Logoanimations</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">Laravel</a>
+                        <a href="#!" class="text-reset">Characterdesign</a>
                     </p>
                     </div>
                     <!-- Grid column -->
