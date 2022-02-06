@@ -149,69 +149,24 @@ h5 {
   }
 }
 
-.zoom {
-
-  transition: transform .2s;
-  /* Animation */
-  width: auto;
-  height: auto;
-  margin: auto;
-  padding: auto;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.zoom:hover {
-  transform: scale(1.5);
-  /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-}
 
 
 
-#wrapper {
-  width: 640px;
-  height: 640px;
-  border: none;
-  overflow: hidden;
-  position: centre;
-}
-
-#image {
-  background-image: url('/assets/images/martialarts.jpg');
-  background-size: 100%;
-  background-position: centre;
-  transition: all 1s ease;
-  width: 100%;
-  height: 100%;
-  transform: scale(1);
-  position: centre;
-  left: 150px;
-  top: 0;
-}
-
-#wrapper:hover #image {
-  transform: scale(2);
-  -webkit-transform: scale(2);
-
-
-  top: 100px;
-
-}
-
-
-
-/*.footer {
-  height: 200px;
-  background-color: black;
-  width: 100%;
-  color: white;
-}
-
-*/
-
+/* [1] The container */
 .img-hover-zoom {
-  height: 300px;
-  /* Modify this according to your need */
+  height: 700px;
+  /* [1.1] Set it as per your need */
   overflow: hidden;
-  /* Removing this will break the effects */
+  /* [1.2] Hide the overflowing of child elements */
+  width: fit-content;
+}
+
+/* [2] Transition property for smooth transformation of images */
+.img-hover-zoom img {
+  transition: transform .5s ease;
+}
+
+/* [3] Finally, transforming the image when container gets hovered */
+.img-hover-zoom:hover img {
+  transform: scale(1.5);
 }
