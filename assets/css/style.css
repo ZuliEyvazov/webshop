@@ -208,22 +208,10 @@ h5 {
 }
 
 */
-.footer a {
-  text-decoration: none;
-  color: coral;
-}
 
-.footer a:hover {
-  color: black;
-}
-
-
-.footer ul {
-  list-style-type: none;
-
-}
-
-.footer {
-  width: 95vw;
-
+.img-hover-zoom {
+  height: 300px;
+  /* Modify this according to your need */
+  overflow: hidden;
+  /* Removing this will break the effects */
 }
