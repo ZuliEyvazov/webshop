@@ -1,3 +1,66 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: left;
+    font-family: arial;
+}
+
+.price {
+    color: grey;
+    font-size: 22px;
+}
+
 .button {
-    margin-right: 50px;
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 50%;
+    font-size: 18px;
+    position: right;
+}
+
+.button:hover {
+    opacity: 0.7;
+}
+
+h5 {
+    position: right;
+}
+
+.colors span {
+
+    display: in-line;
+    border-color: black;
+    float: right;
+    width: 30px;
+    height: 30px;
+    border-radius: 40%;
+    cursor: pointer;
+
+
+}
+
+
+
+
+
+.colors span:nth-child(1) {
+    background-color: red
+}
+
+.colors span:nth-child(2) {
+    background-color: blue
+}
+
+.colors span:nth-child(3) {
+    background-color: yellow
+}
+
+.colors span:nth-child(4) {
+    background-color: purple
 }
