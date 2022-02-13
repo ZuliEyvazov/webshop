@@ -4,6 +4,7 @@
     margin: auto;
     text-align: left;
     font-family: arial;
+    border: none;
 }
 
 .price {
@@ -39,12 +40,20 @@ h5 {
     float: right;
     width: 30px;
     height: 30px;
-    border-radius: 40%;
+    border-radius: 50%;
     cursor: pointer;
 
 
 }
 
+.card {
+    border: none
+}
+
+
+.card-body {
+    border: none;
+}
 
 
 
