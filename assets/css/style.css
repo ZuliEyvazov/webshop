@@ -143,7 +143,10 @@ h5 {
   display: table;
 }
 
+.btn-primary {
 
+  background-color: rgb(39, 100, 110)
+}
 
 
 /* [1] The container */
@@ -158,9 +161,12 @@ h5 {
 /* [2] Transition property for smooth transformation of images */
 .img-hover-zoom img {
   transition: transform .5s ease;
+
 }
 
 /* [3] Finally, transforming the image when container gets hovered */
 .img-hover-zoom:hover img {
   transform: scale(1.5);
+
+
 }
