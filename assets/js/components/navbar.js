@@ -60,7 +60,7 @@ Vue.component('nav-comp', {
 
                     </div>
 
-                     <a href="productpage.html">Productpage</a>
+                    
 
                     <button @click="$root.showCart()" class="shoppingButton"><svg xmlns="http://www.w3.org/2000/svg" width="40"
                             height="40" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">

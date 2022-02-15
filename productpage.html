@@ -33,60 +33,130 @@
 
 
 
-
-
-
-        <div class="card" style="width: 18rem;">
-            <div class="img-hover-zoom">
-                <img src="assets/images/martialarts.jpg" class="card-img-top" alt="Martialarts">
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">MartialArts</h5>
-                <p class="card-text">
-                <div class="d-flex  justify-content-between align-items-centre mt-3 mb-3"> <span>Available colors</span>
-                    <div class="colors"> <span></span> <span></span> <span></span> <span></span> </div>
-                </div>
-                </p>
-                <a href="#" class="btn btn-primary">Add to Cart</a>
-            </div>
-        </div>
-
-
-        <!--<div class="container">
+        <div class="container" id="product-section">
             <div class="row">
-                <div class="col-md-2 col-lg-6"></div>
-                <div class="d-flex  justify-content-between align-items-centre mt-3 mb-3"> <span>Available colors</span>
-                    <div class="colors"> <span></span> <span></span> <span></span> <span></span> </div>
-                </div>
 
-                <div class="card-body text-center">
-                    <button class="button">Add to Cart</button>
-                </div>
-                <h5 class="card-title"> Martialarts</h5>
-                <div class="img-hover-zoom">
-                    <img src="assets/images/martialarts.jpg" alt="Martialarts">
+                <div class="col-md-6">
+
+
+
+                    <img src="assets/images/skeletonTshirt.jpg" class="image-responsive" alt="skeletonTshirt">
+
+
+
 
                 </div>
+
+
+
+                <!--<div class="card-body">
+                    <button v-on:click="addToCart">Add to cart</button>
+                    <h5 class="card-title"> 10,00</h5>
+                    <p class="card-text" v-if="inventory > 10">In Stock</p>
+                    <p class="card-text" v-else-if="inventory<=10 && inventory > 0"> Almost sold out </p>
+                    <p class="card-text" v-else>Out of Stock</p>
+                
+                </div>-->
+
+
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 span class="label label-primary"> Skeleton</span>
+                            </h1>
+
+
+
+
+
+                            <h2 span class="price">€19,99</h2></span></h2>
+
+                            <p class="description">
+                                Men's T-shirt. We will print the product for you after you place the order.
+                                A t-shiort with an awesome design for a night out or just handng out with friends!
+                            </p>
+
+
+                            <p>
+                                Delivery: 18-02-22 - 24-02-22 (Standard)
+                                Classic cut T-shirt for men. 100% cotton.
+                                Brand: Gildan.
+
+                            </p>
+
+
+
+
+                            <span>Available colors</span>
+                            <div class="colors"> <span></span> <span></span> <span></span> <span></span>
+                            </div>
+
+
+                            <p class="card-text" v-if="inventory > 10">In Stock</p>
+                            <p class="card-text" v-else-if="inventory<=10 && inventory > 0"> Almost sold out </p>
+                            <p class="card-text" v-else>Out of Stock</p>
+
+                            <!--<button a href="#" v-on:click="addToCart">Add to cart</button>-->
+                            <a href="#" class="btn btn-primary" v-on:click="addToCart">Add to Cart</a>
+
+
+
+
+                        </div>
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <span class="sr-only">Four out of Five Stars</span>
+                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                                <span class="label label-success">61</span>
+                            </div>
+                            <div class="col-md-3">
+                                <span class="monospaced">Write a Review</span>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
 
 
             </div>
+
+
+
         </div>
-
-
-
-        <!-- <div class="card">
-            <img src="assets/images/martialarts.jpg" alt="martialarts" style="width:50%">
-            <h1>Women Tshirts</h1>
-            <p class="price">$19.99</p>
-            <p>Some text about the jeans..</p>
-            <p><button>Add to Cart</button></p>
-        </div> -->
 
 
 
         <footer-comp></footer-comp>
-
 </div>
+
+
+
 
 
 
