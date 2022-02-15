@@ -73,3 +73,30 @@ h5 {
 .colors span:nth-child(4) {
     background-color: purple
 }
+
+
+
+
+
+
+/* [1] The container */
+.img-hover-zoom-2 {
+    height: 50em;
+    /* [1.1] Set it as per your need */
+    overflow: hidden;
+    /* [1.2] Hide the overflowing of child elements */
+    width: fit-content;
+}
+
+/* [2] Transition property for smooth transformation of images */
+.img-hover-zoom-2 img {
+    transition: transform .5s ease;
+
+}
+
+/* [3] Finally, transforming the image when container gets hovered */
+.img-hover-zoom:hover img {
+    transform: scale(2.5);
+
+
+}
