@@ -39,9 +39,12 @@
                 <div class="col-md-6">
 
 
+                    <div class="img-hover-zoom">
 
-                    <img src="assets/images/skeletonTshirt.jpg" class="image-responsive" alt="skeletonTshirt">
 
+
+                        <img src="assets/images/Tshirts.png" class="card-img-top" alt="Skeleton">
+                    </div>
 
 
 
@@ -62,8 +65,8 @@
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 span class="label label-primary"> Skeleton</span>
-                            </h1>
+                            <h1 span class="label label-primary">Skeleton</h1>
+
 
 
 
@@ -71,38 +74,45 @@
 
                             <h2 span class="price">€19,99</h2></span></h2>
 
+                            <p class="card-text" v-if="inventory > 10">In Stock</p>
+                            <p class="card-text" v-else-if="inventory<=10 && inventory > 0"> Almost sold out </p>
+                            <p class="card-text" v-else>Out of Stock</p>
+
+                            <!--<button a href="#" v-on:click="addToCart">Add to cart</button>-->
+
+
                             <p class="description">
                                 Men's T-shirt. We will print the product for you after you place the order.
-                                A t-shiort with an awesome design for a night out or just handng out with friends!
-                            </p>
+                                A t-shirt with an awesome design for a night out or just handng out with friends!
+                            <ul>
+                                <li> 24-02-22 (Standard) </li>
+                                <li>Classic cut T-shirt for men. </li>
+                                <li>100% cotton </li>
+                                <li>Brand: Gildan </li>
+
+                            </ul>
+
 
 
                             <p>
-                                Delivery: 18-02-22 - 24-02-22 (Standard)
-                                Classic cut T-shirt for men. 100% cotton.
-                                Brand: Gildan.
+                                <a href="#" class="btn btn-primary" v-on:click="addToCart">Add to Cart</a>
+
 
                             </p>
-
-
-
 
                             <span>Available colors</span>
                             <div class="colors"> <span></span> <span></span> <span></span> <span></span>
                             </div>
 
 
-                            <p class="card-text" v-if="inventory > 10">In Stock</p>
-                            <p class="card-text" v-else-if="inventory<=10 && inventory > 0"> Almost sold out </p>
-                            <p class="card-text" v-else>Out of Stock</p>
 
-                            <!--<button a href="#" v-on:click="addToCart">Add to cart</button>-->
-                            <a href="#" class="btn btn-primary" v-on:click="addToCart">Add to Cart</a>
 
 
 
 
                         </div>
+
+
 
 
 
@@ -168,7 +178,6 @@
 
 
 
-</div>
 
 <script src="assets/js/app.js"></script>
 <script src="assets/js/proof.js"></script>

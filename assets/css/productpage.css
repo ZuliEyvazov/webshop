@@ -8,7 +8,7 @@
 }
 
 .price {
-    color: grey;
+    color: rgb(0, 0, 0);
     font-size: 22px;
 }
 
@@ -29,20 +29,17 @@
     opacity: 0.7;
 }
 
-h5 {
-    position: right;
-}
+
 
 .colors span {
 
     display: in-line;
     border-color: black;
-    float: right;
-    width: 30px;
-    height: 30px;
+    float: left;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     cursor: pointer;
-
 
 }
 
@@ -59,19 +56,22 @@ h5 {
 
 
 .colors span:nth-child(1) {
-    background-color: red
+    background-color: rgb(0, 0, 0)
 }
 
 .colors span:nth-child(2) {
-    background-color: blue
+    background-color: rgba(102, 102, 102, 0.322)
 }
+
+
 
 .colors span:nth-child(3) {
-    background-color: yellow
+    background-color: rgb(11, 82, 100)
 }
 
+
 .colors span:nth-child(4) {
-    background-color: purple
+    background-color: rgb(7, 37, 94)
 }
 
 
@@ -80,8 +80,8 @@ h5 {
 
 
 /* [1] The container */
-.img-hover-zoom-2 {
-    height: 50em;
+.img-hover-zoom {
+    height: 40em;
     /* [1.1] Set it as per your need */
     overflow: hidden;
     /* [1.2] Hide the overflowing of child elements */
@@ -89,14 +89,14 @@ h5 {
 }
 
 /* [2] Transition property for smooth transformation of images */
-.img-hover-zoom-2 img {
+.img-hover-zoom- img {
     transition: transform .5s ease;
 
 }
 
 /* [3] Finally, transforming the image when container gets hovered */
 .img-hover-zoom:hover img {
-    transform: scale(2.5);
+    transform: scale(2.1);
 
 
 }
