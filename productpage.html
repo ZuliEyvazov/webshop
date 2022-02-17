@@ -18,6 +18,7 @@
     <script src="/assets/js/components/cart.js"></script>
     <script src="/assets/js/components/navbar.js"></script>
     <script src="/assets/js/components/footer.js"></script>
+    <script src="/assets/js/components/productpage.js"></script>
 </head>
 
 <div id="app">
@@ -52,14 +53,7 @@
 
 
 
-                <!--<div class="card-body">
-                    <button v-on:click="addToCart">Add to cart</button>
-                    <h5 class="card-title"> 10,00</h5>
-                    <p class="card-text" v-if="inventory > 10">In Stock</p>
-                    <p class="card-text" v-else-if="inventory<=10 && inventory > 0"> Almost sold out </p>
-                    <p class="card-text" v-else>Out of Stock</p>
-                
-                </div>-->
+
 
 
                 <div class="col-md-6">
@@ -83,16 +77,12 @@
 
                             <p class="description">
                                 Men's T-shirt. We will print the product for you after you place the order.
-                                A t-shirt with an awesome design for a night out or just handng out with friends!
+                                A t-shirt with an awesome design for a night out or just hanging out with friends!
+                            </p>
+
                             <ul>
-                                <li> 24-02-22 (Standard) </li>
-                                <li>Classic cut T-shirt for men. </li>
-                                <li>100% cotton </li>
-                                <li>Brand: Gildan </li>
-
+                                <li v-for="detail in details">{{ detail }}</li>
                             </ul>
-
-
 
                             <p>
                                 <a href="#" class="btn btn-primary" v-on:click="addToCart">Add to Cart</a>
@@ -104,13 +94,12 @@
                             <div class="colors"> <span></span> <span></span> <span></span> <span></span>
                             </div>
 
-
-
-
-
-
-
                         </div>
+
+                        <div class="cart">
+                            <p>Cart({{cart}})</p>
+                        </div>
+
 
 
 
@@ -161,8 +150,9 @@
         </div>
 
 
-
         <footer-comp></footer-comp>
+
+    </body>
 </div>
 
 
@@ -172,7 +162,7 @@
 
 
 
-</body>
+
 
 
 
@@ -181,7 +171,7 @@
 
 <script src="assets/js/app.js"></script>
 <script src="assets/js/proof.js"></script>
-<script src="assets/js/productpage.js"></script>
+
 
 
 
