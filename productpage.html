@@ -19,6 +19,7 @@
     <script src="/assets/js/components/navbar.js"></script>
     <script src="/assets/js/components/footer.js"></script>
     <script src="/assets/js/components/productpage.js"></script>
+    <script src="assets/js/components/product-review.js"></script>
 </head>
 
 <div id="app">
@@ -86,7 +87,9 @@
 
                             <p>
                                 <a href="#" class="btn btn-primary" v-on:click="addToCart">Add to Cart</a>
-
+                            <div class="cart">
+                                <p>Cart({{cart}})</p>
+                            </div>
 
                             </p>
 
@@ -96,16 +99,14 @@
 
                         </div>
 
-                        <div class="cart">
-                            <p>Cart({{cart}})</p>
-                        </div>
 
 
 
 
+                        <!--<shopping-cart></shopping-cart> -->
 
 
-
+                        <product-review></product-review>
 
 
 
